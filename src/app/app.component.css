@@ -1,3 +1,24 @@
 .search{
     padding: 5em 0px;
 }
+
+.color{
+    background-color: burlywood;
+}
+.color11{
+    background-color: cadetblue;
+}
+
+.card.disabled {
+    opacity: 0.5;
+  }
+
+.navbar-light{
+    background-color: cornsilk;
+}
+
+.heading{
+    background-color: #ffff;
+    border-radius: 0.3em;
+    box-shadow: rgba(0, 0, 0, 0.00) 0px 1px 8px;
+}

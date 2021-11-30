@@ -7,8 +7,9 @@ import { NgbDropdown} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  disabled = false;
   title = 'bootstrapTest';
+  collapsed = true;
   countries:Country[]=[
     {
       name: 'Russia',

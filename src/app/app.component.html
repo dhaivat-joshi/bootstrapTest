@@ -1,28 +1,107 @@
-<div class="search">
-  <app-search></app-search>
-</div>
-<div class="container">
-  <div class="col-12">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Country</th>
-        <th scope="col">Area</th>
-        <th scope="col">Population</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let country of countries; index as i">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>
-         1
-        </td>
-        <td>{{ country.area | number }}</td>
-        <td>{{ country.population | number }}</td>
-      </tr>
-      </tbody>
-    </table>
+<nav id="mainNavbar" class="navbar navbar-expand-sm navbar-light">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand">APP_NAME</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="collapsed = !this.collapsed"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      id="navbarSupportedContent"
+      [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }"
+    >
+      <!-- right nav menus -->
+      <ul class="navbar-nav ml-auto">
+        <li routerLinkActive="active" class="nav-item">
+          <a routerLink="/LINK_1" class="nav-link"> lINK_1 </a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+          <a routerLink="/LINK_2" class="nav-link"> LINK_2 </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  
+</nav>
+
+<div class="container">
+  <div class="row ">
+    <div class="col-12">
+      <h2 class="heading">Hello world</h2>
+      <div class="row ">
+        <div class="col-12">
+          <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+            <ngb-panel title="Simple" class="d-flex flex-row-reverse">
+              <ng-template ngbPanelHeader let-opened="opened">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h5 class="m-0">Search</h5>
+                  <button ngbPanelToggle class="btn btn-link p-0">Toggle</button>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <form>
+                  <div class="row ">
+                    <div class="col-sm-6 col-xs-12 form-group">
+                      <label>First Name</label>
+                      <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col-sm-6 col-xs-12 form-group">
+                      <label>Last Name</label>
+                      <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                  </div>
+                </form>
+                <div class="row justify-content-center">
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-success" id="liveToastBtn">Success</button>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </div>
+      </div>
+      <div class="row py-5">
+        <div class="col">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
